@@ -14,6 +14,7 @@ C:/ti/controlSUITE/device_support/F2837xD/v210/F2837xD_common/source/F2837xD_Cod
 C:/ti/controlSUITE/device_support/F2837xD/v210/F2837xD_common/source/F2837xD_usDelay.asm 
 
 C_SRCS += \
+C:/ti/controlSUITE/device_support/F2837xD/v210/F2837xD_common/source/F2837xD_CpuTimers.c \
 C:/ti/controlSUITE/device_support/F2837xD/v210/F2837xD_common/source/F2837xD_DefaultISR.c \
 C:/ti/controlSUITE/device_support/F2837xD/v210/F2837xD_headers/source/F2837xD_GlobalVariableDefs.c \
 C:/ti/controlSUITE/device_support/F2837xD/v210/F2837xD_common/source/F2837xD_Gpio.c \
@@ -24,6 +25,7 @@ C:/ti/controlSUITE/device_support/F2837xD/v210/F2837xD_common/source/F2837xD_Sys
 ../main.c 
 
 C_DEPS += \
+./F2837xD_CpuTimers.d \
 ./F2837xD_DefaultISR.d \
 ./F2837xD_GlobalVariableDefs.d \
 ./F2837xD_Gpio.d \
@@ -35,6 +37,7 @@ C_DEPS += \
 
 OBJS += \
 ./F2837xD_CodeStartBranch.obj \
+./F2837xD_CpuTimers.obj \
 ./F2837xD_DefaultISR.obj \
 ./F2837xD_GlobalVariableDefs.obj \
 ./F2837xD_Gpio.obj \
@@ -51,6 +54,7 @@ ASM_DEPS += \
 
 OBJS__QUOTED += \
 "F2837xD_CodeStartBranch.obj" \
+"F2837xD_CpuTimers.obj" \
 "F2837xD_DefaultISR.obj" \
 "F2837xD_GlobalVariableDefs.obj" \
 "F2837xD_Gpio.obj" \
@@ -62,6 +66,7 @@ OBJS__QUOTED += \
 "main.obj" 
 
 C_DEPS__QUOTED += \
+"F2837xD_CpuTimers.d" \
 "F2837xD_DefaultISR.d" \
 "F2837xD_GlobalVariableDefs.d" \
 "F2837xD_Gpio.d" \
@@ -80,6 +85,7 @@ ASM_SRCS__QUOTED += \
 "C:/ti/controlSUITE/device_support/F2837xD/v210/F2837xD_common/source/F2837xD_usDelay.asm" 
 
 C_SRCS__QUOTED += \
+"C:/ti/controlSUITE/device_support/F2837xD/v210/F2837xD_common/source/F2837xD_CpuTimers.c" \
 "C:/ti/controlSUITE/device_support/F2837xD/v210/F2837xD_common/source/F2837xD_DefaultISR.c" \
 "C:/ti/controlSUITE/device_support/F2837xD/v210/F2837xD_headers/source/F2837xD_GlobalVariableDefs.c" \
 "C:/ti/controlSUITE/device_support/F2837xD/v210/F2837xD_common/source/F2837xD_Gpio.c" \

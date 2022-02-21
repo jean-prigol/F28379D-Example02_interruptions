@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>Exemplo_01-GPIO</name>
+	<name>Exemplo_02-GPIO-TIMER</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -29,6 +29,11 @@
 			<name>F2837xD_CodeStartBranch.asm</name>
 			<type>1</type>
 			<locationURI>PARENT-4-PROJECT_LOC/ti/controlSUITE/device_support/F2837xD/v210/F2837xD_common/source/F2837xD_CodeStartBranch.asm</locationURI>
+		</link>
+		<link>
+			<name>F2837xD_CpuTimers.c</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/ti/controlSUITE/device_support/F2837xD/v210/F2837xD_common/source/F2837xD_CpuTimers.c</locationURI>
 		</link>
 		<link>
 			<name>F2837xD_DefaultISR.c</name>

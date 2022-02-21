@@ -11,6 +11,7 @@ GEN_CMDS__FLAG :=
 
 ORDERED_OBJS += \
 "./F2837xD_CodeStartBranch.obj" \
+"./F2837xD_CpuTimers.obj" \
 "./F2837xD_DefaultISR.obj" \
 "./F2837xD_GlobalVariableDefs.obj" \
 "./F2837xD_Gpio.obj" \
@@ -130,42 +131,42 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXE_OUTPUTS += \
-Exemplo_01-GPIO.out \
+Exemplo_02-GPIO-TIMER.out \
 
 EXE_OUTPUTS__QUOTED += \
-"Exemplo_01-GPIO.out" \
+"Exemplo_02-GPIO-TIMER.out" \
 
 BIN_OUTPUTS += \
-Exemplo_01-GPIO.hex \
+Exemplo_02-GPIO-TIMER.hex \
 
 BIN_OUTPUTS__QUOTED += \
-"Exemplo_01-GPIO.hex" \
+"Exemplo_02-GPIO-TIMER.hex" \
 
 
 # All Target
 all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
-	@$(MAKE) --no-print-directory -Onone "Exemplo_01-GPIO.out"
+	@$(MAKE) --no-print-directory -Onone "Exemplo_02-GPIO-TIMER.out"
 
 # Tool invocations
-Exemplo_01-GPIO.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
+Exemplo_02-GPIO-TIMER.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: C2000 Linker'
-	"C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 --define=CPU1 --define=_LAUNCHXL_F28379D -g --diag_warning=225 --diag_wrap=off --display_error_number --abi=coffabi -z -m"Exemplo_01-GPIO.map" --stack_size=0x200 --warn_sections -i"C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/lib" -i"C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/include" --reread_libs --diag_wrap=off --display_error_number --xml_link_info="Exemplo_01-GPIO_linkInfo.xml" --rom_model -o "Exemplo_01-GPIO.out" $(ORDERED_OBJS)
+	"C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 --define=CPU1 --define=_LAUNCHXL_F28379D -g --diag_warning=225 --diag_wrap=off --display_error_number --abi=coffabi -z -m"Exemplo_02-GPIO-TIMER.map" --stack_size=0x200 --warn_sections -i"C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/lib" -i"C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/include" --reread_libs --diag_wrap=off --display_error_number --xml_link_info="Exemplo_02-GPIO-TIMER_linkInfo.xml" --rom_model -o "Exemplo_02-GPIO-TIMER.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
-Exemplo_01-GPIO.hex: $(EXE_OUTPUTS)
+Exemplo_02-GPIO-TIMER.hex: $(EXE_OUTPUTS)
 	@echo 'Building secondary target: "$@"'
 	@echo 'Invoking: C2000 Hex Utility'
-	"C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/bin/hex2000" --diag_wrap=off -o "Exemplo_01-GPIO.hex" $(EXE_OUTPUTS__QUOTED)
+	"C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/bin/hex2000" --diag_wrap=off -o "Exemplo_02-GPIO-TIMER.hex" $(EXE_OUTPUTS__QUOTED)
 	@echo 'Finished building secondary target: "$@"'
 	@echo ' '
 
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "F2837xD_CodeStartBranch.obj" "F2837xD_DefaultISR.obj" "F2837xD_GlobalVariableDefs.obj" "F2837xD_Gpio.obj" "F2837xD_PieCtrl.obj" "F2837xD_PieVect.obj" "F2837xD_SysCtrl.obj" "F2837xD_usDelay.obj" "Peripheral_Setup.obj" "main.obj" 
-	-$(RM) "F2837xD_DefaultISR.d" "F2837xD_GlobalVariableDefs.d" "F2837xD_Gpio.d" "F2837xD_PieCtrl.d" "F2837xD_PieVect.d" "F2837xD_SysCtrl.d" "Peripheral_Setup.d" "main.d" 
+	-$(RM) "F2837xD_CodeStartBranch.obj" "F2837xD_CpuTimers.obj" "F2837xD_DefaultISR.obj" "F2837xD_GlobalVariableDefs.obj" "F2837xD_Gpio.obj" "F2837xD_PieCtrl.obj" "F2837xD_PieVect.obj" "F2837xD_SysCtrl.obj" "F2837xD_usDelay.obj" "Peripheral_Setup.obj" "main.obj" 
+	-$(RM) "F2837xD_CpuTimers.d" "F2837xD_DefaultISR.d" "F2837xD_GlobalVariableDefs.d" "F2837xD_Gpio.d" "F2837xD_PieCtrl.d" "F2837xD_PieVect.d" "F2837xD_SysCtrl.d" "Peripheral_Setup.d" "main.d" 
 	-$(RM) "F2837xD_CodeStartBranch.d" "F2837xD_usDelay.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
